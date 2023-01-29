@@ -1,20 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StyleSheet, Text, View, Image, useWindowDimensions } from "react-native";
+import Logo from './assets/grafik1.png';
+import CustomInput from "./src/CustomInput";
 
-export default function App() {
+
+
+const SignInScreen = () => {
+  const {height} = useWindowDimensions();
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={style.root}>
+      <Image source={Logo} 
+      style={[style.logo, {height: height * 0.3}]}
+      resizeMode="contain" />
+
+      <CustomInput/>
     </View>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+const style = StyleSheet.create({
+ root: {
+  alignItems: 'center',
+  padding: 20,
+  backgroundColor: '#F9FBFC'
+ },
+ logo: {
+  width: '70%',
+  maxWidth: 200,
+  maxHeight: 100,
+ },
 });
+
+export default SignInScreen;
