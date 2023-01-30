@@ -1,12 +1,12 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Pressable} from 'react-native'
 
 
 const CustomButton = () => {
   return (
-    <View style={styles.container}>
+    <Pressable style={styles.container}>
       <Text style={styles.text}>Login</Text>
-    </View>
+    </Pressable>
   )
 }
 
@@ -18,6 +18,10 @@ const styles =  StyleSheet.create({
         marginVertical: 5,
         alignItems: 'center',
         borderRadius: 5,
+    },
+    text: {
+     color:'white',
+     fontWeight: 'bold'
     }
 });
 
