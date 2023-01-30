@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Image, useWindowDimensions } from "react-native
 import Logo from './assets/grafik1.png';
 import CustomInput from "./src/CustomInput";
 import CustomButton from "./src/CustomButton";
+import CustomFingerPrButton from "./src/CustomFingerPrButton";
 
 
 
@@ -11,6 +12,10 @@ const SignInScreen = () => {
   const [password, setPassword] = useState('');
 
   const {height} = useWindowDimensions();
+
+  const onSignInPressed = () => {
+    console.warn("Login");
+  }
   return (
     <View style={style.root}>
       <Image source={Logo} 
@@ -21,7 +26,10 @@ const SignInScreen = () => {
       <CustomInput placeholder="Username" value={username} setValue={setUsername}/>
       <Text>Password</Text>
       <CustomInput placeholder="Password" value={password} setPassword={setPassword} secureTextEntry={true}/> 
-      <CustomButton/>
+
+       {/* The button and onPressed */}
+      <CustomButton text="Login" onPress={onSignInPressed}/>
+      <CustomFingerPrButton/>
     </View>
   );
 };
